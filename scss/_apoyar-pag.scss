@@ -1,0 +1,211 @@
+html {
+    @include box-sizing(border-box);
+}
+*,
+*::after,
+*::before {
+    @include box-sizing(inherit);
+}
+
+.contenedor {
+    padding: 21px 20px;
+    font-family: $fuentePrincipal;
+}
+
+/* Aqui empieza barra superior */
+.barra-superior {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+    align-items: center;
+
+    .boton-regresar {
+        img {
+            max-width: 45px;
+        }
+    }
+    span {
+        display: none;
+        @include tablet {
+            display: inline-block;
+            font-size: 30px;
+            margin-left: .5rem;
+            color: $negro1;
+            font-family: $fuentePrincipal;
+        }
+    }
+
+    .logo-anchor {
+        margin-left: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        img {
+            max-width: 50%;
+            @include tablet {
+                max-width: 60%;
+            }
+        }
+    }
+} /* Aqui termina la barra superor*/
+
+/* Aqui empieza tarjetas apoyo */
+.opciones-apoyar {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+        .orando-apoyo,
+        .voluntario-apoyo,
+        .donador-apoyo,
+        .texto-donando {
+            flex: 0 0 50%;
+        }
+    }
+    @include desktop {
+        .orando-apoyo,
+        .voluntario-apoyo,
+        .donador-apoyo,
+        .texto-donando {
+            flex: 0 0 25%;
+        }
+    }
+
+    h1 {
+        font-size: 35px;
+        color: $negro1;
+        margin: 0;
+    }
+    p {
+        font-size: 20px;
+        color: $negro2;
+        @include desktop {
+            font-size: 24px;
+        }
+    }
+
+    a {
+        font-size: 22px;
+        color: $colorPrincipal;
+        text-decoration: none;
+    }
+
+/* Inicia sección tarjetas Orando y Voluntario*/
+    .card {
+        padding: 0;
+        box-shadow: 1px 8px 20px 1px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1.8rem;
+        max-width: 342px;
+
+        img {
+            max-width: 100%;
+        }
+
+        .texto-card {
+        padding-left: .7rem;
+        padding-right: .5rem;
+        display: flex;
+        flex-direction: column;
+               
+        p {
+            padding-top: .3rem;
+            margin-top: 0;
+        }
+
+        a {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        }
+    } /* Aqui termina la sección de Orando y Voluntario*/
+
+/* Aqui inicia la sección de Donando */
+    .donador-apoyo {
+        img {
+            max-width: 100%;
+            @include desktop {
+                height: 665px;
+            }
+        }
+    }
+
+    .texto-donando {
+        @include tablet {
+            padding: 3.5rem;
+        }
+        @include desktop {
+            padding: 1.5rem;
+        }
+        h3 {
+            font-family: $fuentePrincipal;
+            font-size: 30px;
+            color: $negro1;
+            margin-bottom: .5rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.2rem;
+        }
+
+        h4 {
+            font-family: $fuentePrincipal;
+            font-size: 24px;
+            color: $negro2;
+            margin-bottom: .5rem;
+        }
+
+        .paypal-img {
+            max-width: 60%;
+            margin-left: 0;
+        }
+
+        form {
+            align-items: center;
+            margin-left: .9rem;
+        }
+
+        button {
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background: $degradado;
+            color: $blanco;
+            font-family: $fuentePrincipal;
+            font-size: 20px;
+            border-radius: 8px;
+            margin-top: 0;
+            &:hover {
+            background-color: $colorSecundario;
+            }
+        }
+
+        .hasta-momento {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px 20px;
+            box-shadow: 1px 8px 20px 1px rgba(0, 0, 0, 0.2);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 6px;
+
+            h3 {
+                margin: 0;
+                font-size: 23px;
+                color: $negro2;
+                font-weight: 400;
+                padding-bottom: .3rem;
+            }
+            legend {
+                font-size: 35px;
+                color: $negro1;
+                font-weight: 300;
+            }
+        }
+    } /* Aqui termina la sección donando */
+}

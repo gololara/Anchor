@@ -1,0 +1,693 @@
+@import 'mixins';
+@import'variables';
+@import'barra-nav';
+@import'apoyar-pag';
+
+html {
+    @include box-sizing(border-box);
+}
+*,
+*::after,
+*::before {
+    @include box-sizing(inherit);
+}
+
+
+/* Sección Inicio*/
+.inicio-contenedor {
+    display: flex;
+    @include desktop {
+        justify-content: center;
+    }
+/* Aqui esta el contenedor derecho con imagenes*/ 
+    .contendor-derecho {
+        display: none;
+        @include tablet {
+            display: inline-block;
+            div {
+                width: 417px;
+                height: 604px;
+                padding: 0;
+                border: 0;
+                background-image: url(../imagenes/imagen_collage_tablet.png);
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+        }
+        @include desktop {
+            div {
+                width: 900px;
+                height: 870px;
+                padding: 0;
+                border: 0;
+                margin-bottom: 0;
+                background-image: url(../imagenes/imagen_collage.png);
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+/* Aqui esta el contenedor izquierdo con información*/
+    .contenedor-izquierdo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 3rem;
+        @include tablet {
+            justify-content: center;
+            margin-left: 1rem;
+        }
+    
+        .titulo {
+            font-size: 34px;
+            font-family: $fuentePrincipal;
+            color: $negro1;
+            font-weight: 600;
+
+            @include desktop {
+                font-size: 3.5rem;
+            }
+        }
+        .subtitulo {
+            font-size: 30px;
+            font-family: $fuentePrincipal;
+            color: $negro2;
+            font-weight: 400;
+            @include desktop {
+                font-size: 2.7rem;
+            }
+        }
+        p {
+            font-size: 16px;
+            font-family: $fuentePrincipal;
+            color: $negro2;
+            max-width: 400px;
+            @include tablet {
+                max-width: 100%;
+            }
+            @include desktop {
+                font-size: 1.5rem;
+            }
+        }
+    
+        .prox {
+            text-align: center;
+            font-family: $fuentePrincipal;
+            font-size: 22px;
+            color: $negro1;
+            margin-bottom: 1rem;
+            @include desktop {
+                font-size: 2rem;
+            }
+        }
+        
+/*Contenedor app stores*/
+        .stores {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 0;
+            margin-left: .4rem;
+    
+            img {
+                width: 70%;
+                @include desktop {
+                    margin-top: .5rem;
+                    margin-left: 1rem;
+                }
+            }
+        }
+/* Aqui esta el boton que funciona solo en tablet y telefono*/
+        button {
+            display: inline-block;
+            padding: 10px;
+            flex: 1;
+            width: 113px;
+            background-color: $colorPrincipal;
+            color: $blanco;
+            font-family: $fuentePrincipal;
+            font-size: 16px;
+            border-radius: 8px;
+            margin-top: 30px;
+    
+            &:hover {
+                background-color: $colorSecundario;
+            }
+
+            @include tablet {
+                flex: .13;
+            }
+
+            @include desktop {
+                display: none;
+            }
+        }
+    }
+}
+
+/* Aqui termina Inicio*/
+
+/* Aqui inicia la sección de Idea */
+.idea-contenedor {
+    font-family: $fuentePrincipal;
+
+    h1 {
+        font-size: 28px;
+        padding: 17px;
+        margin-bottom: 0;
+        color: $negro1;
+
+        @include tablet {
+        font-size: 45px;
+        }
+        @include desktop {
+            font-size: 70px;
+        }
+    }
+    p {
+        font-size: 16px;
+        margin-top: 0;
+        padding: 0 17px;
+        color: $negro2;
+
+        @include tablet {
+        font-size: 20px;
+        }
+        @include desktop {
+            font-size: 30px;
+            padding: 0 2.5rem;
+        }
+    }
+/* Aqui estan alojadas las imagenes conforme al tamaño*/
+    .contenedor-img-idea {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include desktop {
+            flex-direction: row;
+            margin-bottom: 30px;
+        }
+
+        .img-idea1{
+            max-width: 100%;
+        }
+        .img-idea2 {
+            display: none;
+        }
+        .img-idea3 {
+            display: none;
+        }
+        @include tablet {
+            .img-idea1 {
+                display: none;
+            }
+            .img-idea2 {
+                display: inline-flex;
+            }
+        }
+        @include desktop {
+            .img-idea1 {
+                display: none;
+            }
+            .img-idea2 {
+                display: none;
+            }
+            .img-idea3 {
+                display: inline-block;
+            }
+        }
+
+    /* Aqui va el contenedor de las caracteristicas*/
+        .caracteristicas {
+            padding: 30px 18px;
+            margin: 0 14px;
+            margin-bottom: 25px;
+            background-color: $negro4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include desktop {
+                margin: 0;
+            }
+            
+
+            .notas {
+                display: flex;
+                flex-direction: row;
+                margin-top: 1rem;
+                @include tablet {
+                    margin: 25px;
+                    p {
+                        font-size: 22px;
+                    }
+                    img {
+                        max-width: 100%;
+                    }
+                }
+                @include desktop {
+                    margin: .5rem;
+                    p {
+                        font-size: 20px;
+                    }
+                }
+                span {
+                    font-size: 14px;
+                    color: $negro1;
+                }
+                .a-img {
+                    max-width: 47px;
+                }
+            }
+            .plus {
+                padding: 1rem 0;
+                img {
+                    max-width: 31px;
+                }
+                @include tablet {
+                    padding: 2rem;
+                    img {
+                        max-width: 60px;
+                    }
+                }
+            }
+
+            .opciones {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                align-items: center;
+                
+
+                span {
+                    display: none;
+                }
+                img {
+                    max-width: 35px;
+                    margin: 0 .5rem;
+                }
+                @include tablet {
+                    img {
+                        max-width: 46px;
+                        margin: 0 .8rem;
+                        margin-bottom: 24px;
+                    }
+                }
+                @include desktop {
+                    img {
+                        margin: 0 .4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/* Aqui empieza Sección Enfoque*/
+.enfoque-contenedor {
+    padding-left: 20px;
+    padding-right: 20px;
+    @include desktop {
+        margin-top: 0;
+        padding-left: 160px;
+        padding-right: 160px;
+    }
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 8px 20px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+    h1 {
+        font-family: $fuentePrincipal;
+        font-size: 28px;
+        font-weight: 800;
+        color: $colorPrincipal;
+        text-align: center;
+        padding-top: 1rem;
+        margin-bottom: 0;
+        @include tablet {
+            font-size: 32px;
+        }
+        @include desktop {
+            font-size: 60px;
+        }
+    }
+
+    .line {
+        height: 1.5px;
+        background-color: $negro2;
+        width: 146px;
+        margin-bottom: 1rem;   
+        @include tablet {
+            height: 3px;
+            margin-bottom: 0;
+        } 
+        @include desktop {
+            width: 260px;
+            margin-top: .3rem;
+        }
+    }
+
+/* Aqui estan los tipos de enfoque*/
+    .tipos-enfoque {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        @include desktop {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        img {
+            max-width: 60px;
+            position: absolute;
+            @include tablet {
+                max-width: 110px;
+            }
+            @include desktop {
+                position: inherit;
+            }
+        }
+
+        .contenido {
+            display: flex;
+            font-family: $fuentePrincipal;
+            color: $negro2;
+            margin: .2rem;
+            @include tablet {
+                top: 0;
+                align-items: center;
+            }
+            @include desktop {
+                flex-direction: column;
+                justify-content: start;
+                flex: 1;
+                margin-top: 20px;
+            }
+
+            h2 {
+                font-size: 22px;
+                margin-left: 4.2rem;
+                @include tablet {
+                    font-size: 35px;
+                    margin-left: 8rem;
+                    margin-bottom: 0;
+                    margin-top: 2.5rem;
+                }
+                @include desktop {
+                    margin-left: 0;
+                    text-align: center;
+                }
+            }
+
+            p {
+                font-size: 16px;
+                margin-top: .5rem;
+                @include tablet {
+                    font-size: 22px;
+                    margin-top: 0;
+                    padding-top: 0;
+                    margin-left: 8rem;
+                }
+                @include desktop {
+                    margin-left: 0;
+                    font-size: 18px;
+                    width: 100%;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                }
+            }
+        }        
+    }
+}
+/* Termina sección Enfoque*/
+
+/* Aqui va el contenido de la sección Visión Misión */
+.contenedor-vm {
+    display: flex;
+    @include tablet {
+        margin-top: 30px;
+        align-items: center;
+    }
+}
+
+/* Aqui esta el contenido de la imagen del lado izquierdo*/
+.contenedor-imagen {
+    display: none;
+    @include tablet {
+        display: inline-block;
+        img {
+            max-width: 100%;
+        } 
+    }
+    @include desktop {
+        img {
+           width: 800px;
+        }
+    }
+}
+
+/* Aqui esta el contenido del texto del lado derecho*/
+.vision-mision {
+    padding: 50px;
+    font-family: $fuentePrincipal;
+    color: $negro1;
+    @include tablet {
+        max-width: 800px;
+    }
+
+    h1 {
+        font-size: 35px;
+        @include desktop {
+            font-size: 80px;
+        }
+    }
+
+    legend {
+        font-size: 20px;
+        @include desktop {
+            font-size: 32px;
+        }
+    }
+}
+/* Aqui termina Seccion Visión */
+
+/* Aqui comienza la Sección de Desarrollo */
+.contenedor-des {
+    padding-left: 17px;
+    padding-right: 17px;
+    font-family: $fuentePrincipal;
+    @include tablet {
+        margin-top: 3rem;
+    }
+
+    h1 {
+        font-size: 28px;
+        color: $negro1;
+        @include tablet {
+            font-size: 54px;
+            margin-bottom: 0;
+        }
+        @include desktop {
+            font-size: 70px;
+        }
+    }
+    h2 {
+        color: $negro1;
+        margin-bottom: 0;
+        @include tablet {
+            font-size: 30px;
+        }
+        @include desktop {
+            font-size: 40px;
+        }
+    }
+    p {
+        font-size: 16px;
+        color: $negro2;
+        max-width: 90%;
+        @include tablet {
+            font-size: 20px;
+            max-width: 100%;
+        }
+        @include desktop {
+            font-size: 30px;
+            margin: 0 2rem;
+        }
+    }
+/* Aqui estan las imagenes de conceptos de la app*/
+    .imagenes-conceptos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include tablet {
+            flex-direction: row;
+        }
+
+        img {
+            max-width: 100%;
+            padding: 1.5rem;
+            @include tablet {
+                padding: .5rem;
+                margin-top: .5rem;
+            }
+        }
+        p {
+            font-family: $fuentePrincipal;
+            color: $negro2;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+            max-width: 100%;
+            margin-top: 0;
+            @include desktop {
+                font-size: 32px;
+            }
+        }
+    /* Aqui termina las imagenes de conceptos de la app*/
+    }
+
+/* Aqui empiezan las tarjetas de usuarios */
+    .box-usuarios {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        @include tablet {
+            flex-direction: row;
+        }
+
+        .box2 {
+            box-shadow: 1px 8px 20px 1px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin-top: 1rem;
+            padding: 1rem;
+            @include tablet {
+                margin-left: .5rem;
+                margin-right: .5rem;
+                padding: 2rem 1rem;
+            }
+        }
+
+        img {
+            max-width: 50px;
+            box-shadow: 1px 8px 20px 1px rgba(0, 0, 0, 0.2);
+            border-radius: 100px;
+            position: absolute;
+            @include tablet {
+                max-width: 60px;
+            }
+            @include desktop {
+                max-width: 120px;
+            }
+        }
+        p {
+            margin-left: 65px;
+            margin-top: 0;
+            margin-bottom: .5rem;
+            @include tablet {
+                margin-left: 70px;
+            }
+            @include desktop {
+                margin-left: 145px;
+            }
+        }
+        button {
+            margin-left: 65px;
+            background: $degradado;
+            color: $blanco;
+            font-family: $fuentePrincipal;
+            border-radius: 4px;
+            font-size: 13px;
+            padding: 8px 18px 6px 18px;
+            @include tablet {
+                margin-left: 70px;
+            }
+            @include desktop {
+                margin-left: 145px;
+                border-radius: 8px;
+                padding: 14px 35px 12px 35px;
+                font-size: 20px;
+            }
+        }
+    /* Aqui terminan las tarjetas de usuarios */
+    }
+}
+
+/* Aqui empieza la sección de agradecimientos*/
+.agradecimientos-box {
+    background: $degradado;
+    padding: 25px;
+    @include desktop {
+        padding-bottom: 50px;
+        margin-top: 3rem;
+    }
+    p {
+        font-size: 1rem;
+        font-family: $fuentePrincipal;
+        color: $blanco;
+        @include tablet {
+            font-size: 1.2rem;
+        }
+        @include desktop {
+            font-size: 1.6rem;
+        }
+    }
+    a{
+        text-decoration: none;
+        color: $blanco;
+    }
+    .dla-box {
+        display: flex;
+        align-items: center;
+        img {
+            max-width: 50px;
+            position: absolute;
+            @include tablet {
+                max-width: 70px;
+            }
+            @include desktop {
+                max-width: 120px;
+                margin-bottom: .5rem;
+            }
+        }
+        h3 {
+            margin-left: 60px;
+            font-family: $fuentePrincipal;
+            color: $blanco;
+            font-weight: 400;
+            @include tablet {
+                margin-left: 80px;
+            }
+            @include desktop {
+                font-size: 2rem;
+                margin-left: 135px;
+            }
+        }
+    }
+}
+
+/* Aqui empieza el footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: $fuentePrincipal;
+    color: $negro2;
+    font-size: 14px;
+    .copy-rigth {
+        margin-bottom: 0;
+    }
+    .create-by {
+        margin-top: .5rem;
+    }
+    @include desktop {
+        font-size: 18px;
+    }
+} /* Aqui termina el footer */
+

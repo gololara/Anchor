@@ -1,0 +1,158 @@
+/* Barra de navegación - top */
+
+.header-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+    }
+
+    img {
+        padding-top: 25px;
+        padding-bottom: 10px;
+        width: 164px;
+        @include tablet {
+            padding: 15px;
+            margin-left: 10px;
+        }
+        @include desktop {
+            width: 265px;
+        }
+    }
+    
+
+    nav {
+        display: flex;
+        justify-content: center;
+        a {
+            text-decoration: none;
+            color: $negro1;
+            padding-left: .3rem;
+            padding-right: .3rem;
+            font-family: $fuentePrincipal;
+            font-size: 20px;
+            @include tablet {
+                margin-right: 1.5rem;
+                color: $blanco;
+                padding-left: .1rem;
+                padding-right: .1rem;
+                
+            }
+            @include desktop {
+                font-size: 26px;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                align-self: center;
+            }
+        }
+        
+    }
+
+    button {
+        display: none;
+        @include desktop {
+            display: inline-block;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background-color: $colorPrincipal;
+            color: $blanco;
+            font-family: $fuentePrincipal;
+            font-size: 20px;
+            border-radius: 8px;
+            margin-right: 15px;
+            margin-top: 0;
+            &:hover {
+            background-color: $colorSecundario;
+            }
+        }
+    }
+}
+
+/* Barra de navegación - scroll */
+.scroll-nav {
+    position: fixed;
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    background-color: $blancoTransparente;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+    }
+
+    img {
+        display: none;
+        @include tablet {
+            padding: 15px;
+            margin-left: 10px;
+        }
+        @include desktop {
+            width: 265px;
+        }
+    }
+    
+
+    nav {
+        a {
+            text-decoration: none;
+            color: $negro1;
+            padding-left: .3rem;
+            padding-right: .3rem;
+            font-family: $fuentePrincipal;
+            font-size: 20px;
+            @include tablet {
+                margin-right: 1.5rem;
+                color: $blanco;
+                padding-left: .1rem;
+                padding-right: .1rem;
+                
+            }
+            @include desktop {
+                font-size: 26px;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        
+    }
+
+    button {
+        display: none;
+        @include desktop {
+            display: inline-block;
+            padding-left: 49px;
+            padding-right: 49px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            background: $degradado;
+            color: $blanco;
+            font-family: $fuentePrincipal;
+            font-size: 22px;
+            border-radius: 8px;
+            margin-right: 15px;
+            &:hover {
+                background-color: $colorSecundario;
+            }
+        }
+    }
+}
+
+.push-down {
+    background: $blancoTransparente;
+    height: 62px;
+    max-width: 100%;
+}
